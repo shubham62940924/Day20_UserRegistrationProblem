@@ -5,7 +5,6 @@ package com.userregistration;
 enter a valid FirstName
 - First name starts with Cap and has minimum 3 characters
  * 
- * 
  */
 import java.util.regex.Pattern;
 

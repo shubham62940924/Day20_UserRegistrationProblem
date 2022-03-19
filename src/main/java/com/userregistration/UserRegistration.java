@@ -10,10 +10,16 @@ enter a valid FirstName
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-	private static final String FIRST_NAME = "^[A-Z]{1}[a-z]{2,}$";
+	private static final String NAME = "^[A-Z]{1}[a-z]{2,}$";
 
 	public boolean validateFirstName(String fname) {
-		Pattern pattern = Pattern.compile(FIRST_NAME);
-		return pattern.matches(FIRST_NAME, fname);
+		Pattern pattern = Pattern.compile(NAME);
+		return pattern.matches(NAME, fname);
+	}
+
+//enter a valid LastName
+	public boolean validateLastName(String lName) {
+		Pattern pattern = Pattern.compile(NAME);
+		return pattern.matches(NAME, lName);
 	}
 }

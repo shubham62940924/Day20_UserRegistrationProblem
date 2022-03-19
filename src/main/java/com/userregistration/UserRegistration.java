@@ -13,7 +13,7 @@ public class UserRegistration {
 	private static final String NAME = "^[A-Z]{1}[a-z]{2,}$";
 	private static final String EMAIL_PATTERN = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
 	private static final String PHONE = "^[9]{1}[1]{1}[ ]?[6-9]{1}[0-9]{9}$";
-	private static final String PASSWORD = "^[\\dA-Za-z\\w\\D]{8,}$";
+	private static final String PASSWORD = "^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\\W).*$";
 
 	public boolean validateFirstName(String fname) {
 		Pattern pattern = Pattern.compile(NAME);
@@ -39,6 +39,12 @@ public class UserRegistration {
 	}
 
 	// Password Minimum8 Character
+	public boolean validatePassword1(String password) {
+		Pattern pattern = Pattern.compile(PASSWORD);
+		return pattern.matches(PASSWORD, password);
+	}
+
+	// PasswordWithOneCaps
 	public boolean validatePassword(String password) {
 		Pattern pattern = Pattern.compile(PASSWORD);
 		return pattern.matches(PASSWORD, password);
